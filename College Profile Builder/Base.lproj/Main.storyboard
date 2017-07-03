@@ -69,12 +69,21 @@
                                 <rect key="frame" x="157" y="425" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="onTappedSaveButton:" destination="JEX-9P-axG" eventType="touchUpInside" id="ZB1-Zo-7gL"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="College Detail" id="mOI-FS-AaM"/>
+                    <connections>
+                        <outlet property="collegeTextField" destination="pGt-jP-mTY" id="M5J-aY-wEf"/>
+                        <outlet property="enrollmentTextField" destination="7po-HL-Ia8" id="lID-gX-5QX"/>
+                        <outlet property="imageView" destination="2SC-Bm-rpl" id="HG2-4e-cqL"/>
+                        <outlet property="locationTextField" destination="7VG-Es-Fsa" id="g0k-u9-ekc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FJe-Yq-33r" sceneMemberID="firstResponder"/>
             </objects>
