@@ -8,13 +8,18 @@
 
 import UIKit
 import RealmSwift
+import SafariServices
 
-class DetailViewController: UIViewController {
+class DetailViewController: UIViewController, UIImagePickerControllerDelegate,
+UINavigationControllerDelegate {
 
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var locationTextField: UITextField!
     @IBOutlet weak var enrollmentTextField: UITextField!
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var websiteTextField: UITextField!
+    let imagePicker = UIImagePickerController()
+    
      let realm = try! Realm()
 
     var detailItem: College? {
@@ -30,6 +35,12 @@ class DetailViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         configureView()
     }
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        imagePicker.dismiss(animated: true) {
+            let selectedImage = info[UIImagePickerControllerOriginalImage] as! UIImage
+            self.imageView.image = selectedImage
+        }
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -43,6 +54,7 @@ class DetailViewController: UIViewController {
                 locationTextField.text = college.location
                 enrollmentTextField.text = String(college.enrollment)
                 imageView.image = UIImage(data: college.image)
+                websiteTextField.text = college.website
             }
         }
     }
@@ -54,10 +66,23 @@ class DetailViewController: UIViewController {
                 college.location = locationTextField.text!
                 college.enrollment = Int(enrollmentTextField.text!)!
                 college.image = UIImagePNGRepresentation(imageView.image!)!
+                college.website = websiteTextField.text!
             })
         }
         
     }
+    //does the following go in master or detail?
+         @IBAction func onGoButtonTapped(_ sender: Any) {
+            let urlString = "https://" + websiteTextField.text!
+        let url = URL(string: urlString)
+        let svc = SFSafariViewController(url: url!)
+        present(svc, animated: true, completion: nil)
+    }
+    @IBAction func onChangeImageButtonTapped(_ sender: Any) {
+        imagePicker.sourceType = UIImagePickerControllerSourceType.photoLibrary
+        present(imagePicker, animated: true, completion: nil)
+    }
+    
 
 }
 
