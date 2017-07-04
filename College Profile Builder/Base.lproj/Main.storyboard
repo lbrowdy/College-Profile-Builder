@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -37,57 +38,69 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="College Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pGt-jP-mTY">
-                                <rect key="frame" x="105" y="84" width="150" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Location" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7VG-Es-Fsa">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Location" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7VG-Es-Fsa">
                                 <rect key="frame" x="105" y="122" width="150" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enrollment" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7po-HL-Ia8">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enrollment" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7po-HL-Ia8">
                                 <rect key="frame" x="105" y="160" width="150" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2SC-Bm-rpl">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2SC-Bm-rpl">
                                 <rect key="frame" x="80" y="207" width="200" height="200"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="200" id="ZPx-et-33f"/>
-                                    <constraint firstAttribute="width" constant="200" id="a6y-lz-14m"/>
-                                </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FqB-Si-ZlR">
-                                <rect key="frame" x="157" y="425" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FqB-Si-ZlR">
+                                <rect key="frame" x="164" y="429" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="46" id="Xcd-1c-ceR"/>
+                                </constraints>
                                 <state key="normal" title="Save"/>
                                 <connections>
                                     <action selector="onTappedSaveButton:" destination="JEX-9P-axG" eventType="touchUpInside" id="ZB1-Zo-7gL"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="College Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pGt-jP-mTY">
+                                <rect key="frame" x="90" y="84" width="170" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="pGt-jP-mTY" secondAttribute="trailing" constant="99" id="9us-CG-JQ1"/>
+                            <constraint firstItem="pGt-jP-mTY" firstAttribute="leading" secondItem="svH-Pt-448" secondAttribute="leadingMargin" constant="74" id="CQl-1M-ORU"/>
+                            <constraint firstItem="FqB-Si-ZlR" firstAttribute="centerX" secondItem="svH-Pt-448" secondAttribute="centerX" id="EFm-ir-VKy"/>
+                            <constraint firstItem="2SC-Bm-rpl" firstAttribute="top" secondItem="7po-HL-Ia8" secondAttribute="bottom" constant="17" id="END-07-DWv"/>
+                            <constraint firstItem="7VG-Es-Fsa" firstAttribute="top" secondItem="pGt-jP-mTY" secondAttribute="bottom" constant="8" symbolic="YES" id="JBf-qF-uad"/>
+                            <constraint firstItem="FqB-Si-ZlR" firstAttribute="top" secondItem="2SC-Bm-rpl" secondAttribute="bottom" constant="22" id="P5b-yv-imj"/>
+                            <constraint firstItem="7po-HL-Ia8" firstAttribute="centerX" secondItem="2SC-Bm-rpl" secondAttribute="centerX" id="Si4-uf-fnM"/>
+                            <constraint firstItem="7po-HL-Ia8" firstAttribute="top" secondItem="7VG-Es-Fsa" secondAttribute="bottom" constant="8" symbolic="YES" id="Ylp-Wb-y9Q"/>
+                            <constraint firstItem="7VG-Es-Fsa" firstAttribute="trailing" secondItem="7po-HL-Ia8" secondAttribute="trailing" id="fCq-7i-3ca"/>
+                            <constraint firstItem="GAO-Cl-Wes" firstAttribute="top" secondItem="FqB-Si-ZlR" secondAttribute="bottom" constant="208" id="jL2-VS-vqm"/>
+                            <constraint firstItem="7VG-Es-Fsa" firstAttribute="leading" secondItem="svH-Pt-448" secondAttribute="leadingMargin" constant="89" id="oAj-fU-Tfb"/>
+                            <constraint firstItem="7VG-Es-Fsa" firstAttribute="leading" secondItem="7po-HL-Ia8" secondAttribute="leading" id="p7Z-HD-CYU"/>
+                            <constraint firstItem="2SC-Bm-rpl" firstAttribute="leading" secondItem="svH-Pt-448" secondAttribute="leadingMargin" constant="64" id="wl6-Te-Yca"/>
+                            <constraint firstItem="pGt-jP-mTY" firstAttribute="top" secondItem="SYR-Wa-9uf" secondAttribute="bottom" constant="20" id="ydS-Wd-LUl"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="2SC-Bm-rpl" secondAttribute="trailing" constant="79" id="zdd-Ep-1ix"/>
+                        </constraints>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="College Detail" id="mOI-FS-AaM"/>
                     <connections>
-                        <outlet property="collegeTextField" destination="pGt-jP-mTY" id="M5J-aY-wEf"/>
                         <outlet property="enrollmentTextField" destination="7po-HL-Ia8" id="lID-gX-5QX"/>
                         <outlet property="imageView" destination="2SC-Bm-rpl" id="HG2-4e-cqL"/>
                         <outlet property="locationTextField" destination="7VG-Es-Fsa" id="g0k-u9-ekc"/>
+                        <outlet property="nameTextField" destination="pGt-jP-mTY" id="5gs-D1-2bg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FJe-Yq-33r" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="709" y="129"/>
+            <point key="canvasLocation" x="708" y="128.18590704647679"/>
         </scene>
         <!--Split View Controller-->
         <scene sceneID="Nki-YV-4Qg">
